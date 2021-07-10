@@ -13,7 +13,7 @@
                 </div>
           </div>
           <div class="row g-3">
-              <div v-for="(song,index) in songlist" :key="index" class="col-3 my-song" >
+              <div v-for="(song,index) in filtersong" :key="index" class="col-3 my-song" >
                   <img :src="song.poster" alt="">
                   <div class="fs-5 fw-bolder">{{song.title}}</div>
                   <div class="my-text">{{song.author}}</div>
@@ -42,7 +42,7 @@ export default {
     computed:{
         filtersong(){
             return this.songlist.filter( item =>{
-                return console.log(item.genre.includes(this.filtrato));
+                return item.genre.includes(this.filtrato);
             })
         },
         Test(){
